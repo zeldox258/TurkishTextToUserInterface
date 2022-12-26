@@ -10,6 +10,12 @@ input[type=text], select {
   border-radius: 4px;
   box-sizing: border-box;
 }
+img {  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border-radius: 50%;
+}
 
 input[type=submit] {
   width: 100%;
@@ -28,7 +34,7 @@ input[type=submit]:hover {
 
 div {
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: yellow;
   padding: 20px;
 }
 </style>
@@ -37,18 +43,20 @@ div {
 
 <div>
   <form action="/action_page.php">
-<label for="isim">isim</label>
-<input type="text" id="isim" name="isim" placeholder="isim">
-<label for="soyisim">soyisim</label>
-<input type="text" id="soyisim" name="soyisim" placeholder="soyisim">
-<label for="dogumTarihi">dogumTarihi</label>
-<input type="text" id="dogumTarihi" name="dogumTarihi" placeholder="dogumTarihi">
-<label for="kilo">kilo</label>
-<input type="text" id="kilo" name="kilo" placeholder="kilo">
-<label for="numara">numara</label>
-<input type="text" id="numara" name="numara" placeholder="numara">
-<label for="yas">yas</label>
-<input type="text" id="yas" name="yas" placeholder="yas"><input type="submit" value="Gonder">
+<img src="./images/Araba.jpg" alt="Araba">
+
+<label for="Isim">Isim</label>
+<input type="text" id="Isim" name="Isim" placeholder="Isim">
+<label for="Soyism">Soyism</label>
+<input type="text" id="Soyism" name="Soyism" placeholder="Soyism">
+<label for="Yas">Yas</label>
+<input type="text" id="Yas" name="Yas" placeholder="Yas"><p>Favori</p>
+<input type="radio" id="0" name="0" >
+  <label for="0">oyun</label><br><input type="radio" id="1" name="0" >
+  <label for="1">dans</label><br><input type="radio" id="2" name="0" >
+  <label for="2">muzik</label><br>
+<label for="DogumTarihi">DogumTarihi</label>
+<input type="text" id="DogumTarihi" name="DogumTarihi" placeholder="DogumTarihi"><input type="submit" value="Gonder">
   </form>
 </div>
 

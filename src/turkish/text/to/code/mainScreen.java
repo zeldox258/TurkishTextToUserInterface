@@ -13,7 +13,10 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
+import static java.util.Map.entry;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,8 +26,18 @@ import java.util.logging.Logger;
  * @author omera
  */
 public class mainScreen extends javax.swing.JFrame {
-    Set<String> set = new HashSet<>(Arrays.asList("ordan", "bir", "form", "bana", "olan","ve","bilgileri"));
-
+    Set<String> set = new HashSet<>(Arrays.asList("ordan", "bir", "form", "bana", "olan","ve","bilgileri","guzel","arka","plan","ayrica","da","olsun","icerisinde","alan","arkaplani","renkli","arkaplan"));
+    Map<String,String> colors = Map.ofEntries(
+        entry("sari", "yellow"),
+        entry("kirmizi", "red")
+    );
+    String generalColor = " #f2f2f2";
+    String imageInfo = "";
+    int idCounter = 0;
+    boolean radioFlag = false;
+    boolean dropFlag = false;
+    ArrayList<String> radioButtons = new ArrayList<>();
+    String radioOrDropText = "";
     /**
      * Creates new form mainScreen
      */
@@ -90,8 +103,56 @@ public class mainScreen extends javax.swing.JFrame {
         
         for(String s : arr){
             if(!set.contains(s)){
-                result.add(s);
-                System.out.println(s);
+                if(radioFlag && !s.equals(")")){
+                    radioOrDropText += "<input type=\"radio\" id=\""+ idCounter +"\" name=\""+radioButtons.size()+"\" >\n" +
+                    "  <label for=\""+ idCounter++ +"\">"+s+"</label><br>";
+                }
+                else if(dropFlag && !s.equals("]")){
+                    radioOrDropText += "<input type=\"radio\" id=\""+ idCounter +"\" name=\""+radioButtons.size()+"\" >\n" +
+                    "  <label for=\""+ idCounter++ +"\">"+s+"</label><br>";
+                }
+                else if(colors.containsKey(s)){
+                    generalColor = colors.get(s);
+                    System.out.println(s+" -> "+generalColor);
+
+                }
+                else if(s.startsWith("resim") || s.startsWith("fotograf")){
+                    if(s.startsWith("resim")){
+                        imageInfo = s.substring(5);
+                        System.out.println(s.substring(5));
+                    }
+                    else{
+                        imageInfo = s.substring(8);
+                        System.out.println(s.substring(8));
+                    }
+                }
+                else if(s.charAt(s.length()-1) == '('){
+                    radioOrDropText = "<p>"+ s.substring(0, s.length()-1)+"</p>\n";
+                    radioFlag = true;
+                    
+                }
+                else if(s.charAt(s.length()-1) == '['){
+                    radioOrDropText = "<p>"+ s.substring(0, s.length()-1)+"</p>\n";
+                    dropFlag = true;
+                }
+                else if( s.equals(")") ){
+                    
+                    result.add("Radio");
+                    System.out.println("Radio");
+                    radioFlag = false;
+                    radioButtons.add(radioOrDropText);
+                }
+                else if( s.equals("]") ){
+                    result.add("Drop");
+                    System.out.println("Drop");
+                    dropFlag = false;
+                }
+                else{
+                    String temp = s.substring(0, 1).toUpperCase() + s.substring(1);
+                    result.add(temp);
+                    System.out.println(temp);
+                }
+                
             }
             
 
@@ -124,6 +185,13 @@ public class mainScreen extends javax.swing.JFrame {
                                 "  border-radius: 4px;\n" +
                                 "  box-sizing: border-box;\n" +
                                 "}\n" +
+                                "img {"+
+                                "  display: block;\n"+
+                                "  margin-left: auto;\n"+
+                                "  margin-right: auto;\n"+
+                                "  width: 50%;\n"+
+                                "  border-radius: 50%;\n"+
+                                "}\n"+
                                 "\n" +
                                 "input[type=submit] {\n" +
                                 "  width: 100%;\n" +
@@ -142,7 +210,7 @@ public class mainScreen extends javax.swing.JFrame {
                                 "\n" +
                                 "div {\n" +
                                 "  border-radius: 5px;\n" +
-                                "  background-color: #f2f2f2;\n" +
+                                "  background-color: "+generalColor+";\n" +
                                 "  padding: 20px;\n" +
                                 "}\n" +
                                 "</style>\n" +
@@ -155,10 +223,22 @@ public class mainScreen extends javax.swing.JFrame {
             
             
             // Our things will be added to here
+            if(imageInfo.length()!=0){
+                printStream.print("\n<img src=\"./images/"+imageInfo+".jpg"+"\" alt=\""+imageInfo+"\">\n");
+            }
             
             for(String s : reducedText){
-                printStream.print("\n<label for=\""+s+"\">"+s+"</label>\n" +
+                if(s.equals("Radio")){
+                    printStream.print(radioButtons.get(0));
+                    radioButtons.remove(0);
+                }
+                else if(s.equals("Drop")){
+                    
+                }
+                else{
+                    printStream.print("\n<label for=\""+s+"\">"+s+"</label>\n" +
                                   "<input type=\"text\" id=\""+s+"\" name=\""+s+"\" placeholder=\"" +s+"\">");
+                }
            }
             
             
