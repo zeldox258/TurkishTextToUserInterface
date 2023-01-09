@@ -38,6 +38,11 @@ public class mainScreen extends javax.swing.JFrame {
     boolean dropFlag = false;
     ArrayList<String> radioButtons = new ArrayList<>();
     String radioOrDropText = "";
+    
+    
+    
+    
+    
     /**
      * Creates new form mainScreen
      */
@@ -100,10 +105,35 @@ public class mainScreen extends javax.swing.JFrame {
 
     private ArrayList<String> reducer(String[] arr){
         ArrayList<String> result = new ArrayList<>();
-        
+        String fixText = "";
+        boolean isFixText = false;
         for(String s : arr){
             if(!set.contains(s)){
-                if(radioFlag && !s.equals(")")){
+                if(isFixText){
+                    if(s.endsWith("\"")){
+                        fixText += s.substring(0,s.length()-1);
+                        isFixText = false;
+                        result.add(fixText);
+                        System.out.println(fixText);
+                        fixText = "";
+                    }
+                    else{
+                        fixText+= s+" ";
+                    }
+                }
+                else if(s.startsWith("\"")){
+                    
+                    if(!s.endsWith("\"")){
+                        fixText += s.substring(1)+" ";
+                        isFixText = true;
+                    }
+                    else{
+                        result.add(s.substring(1,s.length()-1));
+                        System.out.println(s.substring(1,s.length()-1));
+                    }
+                                        
+                }
+                else if(radioFlag && !s.equals(")")){
                     radioOrDropText += "<input type=\"radio\" id=\""+ idCounter +"\" name=\""+radioButtons.size()+"\" >\n" +
                     "  <label for=\""+ idCounter++ +"\">"+s+"</label><br>";
                 }
