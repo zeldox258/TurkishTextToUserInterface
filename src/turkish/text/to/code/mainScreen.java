@@ -26,7 +26,33 @@ import java.util.logging.Logger;
  * @author omera
  */
 public class mainScreen extends javax.swing.JFrame {
-    Set<String> set = new HashSet<>(Arrays.asList("ordan","bilgilerini","sorusu", "bir", "form", "bana", "olan","ve","bilgileri","guzel","arka","plan","ayrica","da","olsun","icerisinde","alan","arkaplani","renkli","arkaplan"));
+    Set<String> set = new HashSet<>(Arrays.asList("ordan","bilgilerini","sorusu", "bir", "form", "bana", "olan","ve","bilgileri","guzel","arka","plan","ayrica","da","olsun","icerisinde","alan","arkaplani","renkli","arkaplan",
+    "boyle" , "bu", "sekilde",
+    "hatta",
+    "simdi" , "su","anda",
+    "ancak" , "lakin",
+    "dolayi" , "sebebiyle",
+    "gore" , "bakimindan",
+    "herhangi" , "her" ,"ne",
+    "yüzden" ,"nedenle",
+    "o" ,"zaman" , "zaman",
+    "oldugu" ,"haliyle",
+    "ilaveten" , "ek","olarak",
+    "genellikle" , "cogunlukla",
+    "once" , "ilkin",
+    "nasil" , "nasil","oluyor",
+    "nerede" , "hangi","yerde",
+    "nicin" , "neden",
+    "once" , "evvel",
+    "sonra" , "daha",
+    "sadece" , "sade",
+    "sanki" , " sanki",
+    "simdi" , "su","an",
+    "sonunda" , "sonunda",
+    "ancak" , "bununla","beraber"));
+    
+    
+    
     Map<String, String> colors = Map.ofEntries(
         entry("sari", "yellow"),
         entry("kirmizi", "red"),
