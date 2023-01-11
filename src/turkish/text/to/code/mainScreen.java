@@ -26,11 +26,52 @@ import java.util.logging.Logger;
  * @author omera
  */
 public class mainScreen extends javax.swing.JFrame {
-    Set<String> set = new HashSet<>(Arrays.asList("ordan", "bir", "form", "bana", "olan","ve","bilgileri","guzel","arka","plan","ayrica","da","olsun","icerisinde","alan","arkaplani","renkli","arkaplan"));
-    Map<String,String> colors = Map.ofEntries(
+    Set<String> set = new HashSet<>(Arrays.asList("ordan","bilgilerini","sorusu", "bir", "form", "bana", "olan","ve","bilgileri","guzel","arka","plan","ayrica","da","olsun","icerisinde","alan","arkaplani","renkli","arkaplan"));
+    Map<String, String> colors = Map.ofEntries(
         entry("sari", "yellow"),
-        entry("kirmizi", "red")
+        entry("kirmizi", "red"),
+        entry("yesil", "green"),
+        entry("mavi", "blue"),
+        entry("siyah", "black"),
+        entry("beyaz", "white"),
+        entry("pembe", "pink"),
+        entry("gri", "gray"),
+        entry("mor", "purple"),
+        entry("turuncu", "orange"),
+        entry("kahverengi", "brown"),
+        entry("lacivert", "navy"),
+        entry("turkuaz", "aqua"),
+        entry("kestane", "maroon"),
+        entry("sahra", "tan"),
+        entry("sari-yesil", "chartreuse"),
+        entry("pembe-mavi", "periwinkle"),
+        entry("lacivert-yesil", "teal"),
+        entry("siyah-beyaz", "silver"),
+        entry("kahverengi-yesil", "olive"),
+        entry("kirmizi-sari", "orange"),
+        entry("gri-mavi", "slate"),
+        entry("kahverengi-gri", "taupe"),
+        entry("pembe-kirmizi", "magenta"),
+        entry("lacivert-mavi", "indigo"),
+        entry("yesil-sari", "lime"),
+        entry("siyah-gri", "charcoal"),
+        entry("kahverengi-sari", "goldenrod"),
+        entry("kirmizi-yesil", "vermilion"),
+        entry("gri-yesil", "seagreen"),
+        entry("kahverengi-kirmizi", "rust"),
+        entry("pembe-sari", "coral"),
+        entry("lacivert-kirmizi", "crimson"),
+        entry("yesil-mavi", "mint"),
+        entry("siyah-sari", "sable"),
+        entry("kahverengi-mavi", "cobalt"),
+        entry("kirmizi-mavi", "cerulean"),
+        entry("gri-kirmizi", "raspberry"),
+        entry("kahverengi-pembe", "mauve"),
+        entry("sari-mavi", "sky"),
+        entry("yesil-siyah", "ebony"),
+        entry("kirmizi-siyah", "onyx")
     );
+
     String generalColor = " #f2f2f2";
     String imageInfo = "";
     int idCounter = 0;
@@ -108,12 +149,22 @@ public class mainScreen extends javax.swing.JFrame {
         String fixText = "";
         boolean isFixText = false;
         for(String s : arr){
+            if(s.startsWith("\n")){
+                s = s.substring(1);
+            }
             if(!set.contains(s)){
                 if(isFixText){
                     if(s.endsWith("\"")){
                         fixText += s.substring(0,s.length()-1);
                         isFixText = false;
                         result.add(fixText);
+                        System.out.println(fixText);
+                        fixText = "";
+                    }else if(s.endsWith("(")){
+                        fixText += s.substring(0,s.length()-2);
+                        isFixText = false;
+                        radioOrDropText = "<p>"+ fixText+"</p>\n";
+                        radioFlag = true;
                         System.out.println(fixText);
                         fixText = "";
                     }
