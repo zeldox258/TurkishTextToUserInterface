@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<style>
+img {  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border-radius: 50%;
+}
+
+label {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    input[type="text"], input[type="email"], input[type="password"] {
+      padding: 10px;
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid gray;
+    }
+
+    input[type="submit"] {
+      background-color: blue;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+input[type=submit]:hover {
+  background-color: darkblue;
+}
+
+div {
+  border-radius: 5px;
+  background-color: chartreuse;
+  padding: 20px;
+}
+</style>
+<body>
+
+
+<div>
+  <form action="/action_page.php">
+<img src="./images/Araba.jpg" alt="Araba">
+<p>Hangi Kurtlar vadisi karakterisin</p>
+<input type="radio" id="0" name="0" >
+  <label for="0">testere</label><br><input type="radio" id="1" name="0" >
+  <label for="1">polat</label><br><input type="radio" id="2" name="0" >
+  <label for="2">elif</label><br><input type="radio" id="3" name="0" >
+  <label for="3">cakir</label><br><p>En Buyuk takim kim</p>
+<input type="radio" id="4" name="1" >
+  <label for="4">Fenerbahce</label><br><input type="radio" id="5" name="1" >
+  <label for="5">Fenerbahce</label><br><input type="radio" id="6" name="1" >
+  <label for="6">Fenerbahce</label><br>
+<label for="Isim">Isim</label>
+<input type="text" id="Isim" name="Isim" placeholder="Isim"> 
+<br/>
+<label for="Yas">Yas</label>
+<input type="text" id="Yas" name="Yas" placeholder="Yas"> 
+<br/>
+<label for="Sehir">Sehir</label>
+<input type="text" id="Sehir" name="Sehir" placeholder="Sehir"> 
+<br/><input type="submit" value="Gonder">
+  </form>
+</div>
+
+</body>
+</html>
