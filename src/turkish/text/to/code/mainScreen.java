@@ -49,7 +49,7 @@ public class mainScreen extends javax.swing.JFrame {
     "sanki" , " sanki",
     "simdi" , "su","an",
     "sonunda" , "sonunda",
-    "ancak" , "bununla","beraber","onunla"));
+    "ancak" , "bununla","beraber","onunla","buna","benzer","bilgiler"));
     
     
     
