@@ -424,6 +424,9 @@ public class mainScreen extends javax.swing.JFrame {
                                 "\n" +
                                 "div {\n" +
                                 "  border-radius: 5px;\n" +
+                                "  display:flex;\n"+
+                                "  align-items: center;\n"+
+                                "  justify-content: center;"+
                                 "  background-color: "+generalColor+";\n" +
                                 "  padding: 20px;\n" +
                                 "}\n" +
