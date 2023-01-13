@@ -426,9 +426,15 @@ public class mainScreen extends javax.swing.JFrame {
                                 "  border-radius: 5px;\n" +
                                 "  display:flex;\n"+
                                 "  align-items: center;\n"+
-                                "  justify-content: center;"+
+                                "  justify-content: center;\n"+
                                 "  background-color: "+generalColor+";\n" +
                                 "  padding: 20px;\n" +
+                                "}\n" +
+                                         "form {\n" +
+                                "  display:flex;\n"+
+                                "  align-items: center;\n"+
+                                "  justify-content: center;\n"+
+                                "  flex-direction: column;\n"+
                                 "}\n" +
                                 "</style>\n" +
                                 "<body>\n" +
