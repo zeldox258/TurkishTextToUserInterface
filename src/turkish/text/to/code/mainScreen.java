@@ -23,6 +23,8 @@ import java.util.logging.Logger;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths; 
+import javax.swing.*;
+import java.io.FileWriter;
 
 /**
  *
@@ -30,6 +32,8 @@ import java.nio.file.Paths;
  */
 public class mainScreen extends javax.swing.JFrame {
     Set<String> set = new HashSet<>();
+    Set<String> formSentences = new HashSet<>();
+
     
     
     
@@ -100,6 +104,16 @@ public class mainScreen extends javax.swing.JFrame {
             for(String line:lines) {
                 //System.out.println(line);
                 set.add(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        try {
+            var lines = Files.readAllLines(Paths.get("formSentences.txt"));
+            for(String line:lines) {
+                //System.out.println(line);
+                formSentences.add(line);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -253,9 +267,51 @@ public class mainScreen extends javax.swing.JFrame {
                     radioButtons.add(radioOrDropText);
                 }
                 else{
-                    String temp = s.substring(0, 1).toUpperCase() + s.substring(1);
-                    result.add(temp);
-                    System.out.println(temp);
+                    if(formSentences.contains(s)){
+                        String temp = s.substring(0, 1).toUpperCase() + s.substring(1);
+                        result.add(temp);
+                        System.out.println(temp);
+                    }
+                    else{
+                        var yesOrNo = JOptionPane.showConfirmDialog(null, "\""+s+"\" forma eklenecek mi ?");
+                        if (yesOrNo == 0) {
+                          JOptionPane.showMessageDialog(null, "Forma eklendi");
+                           try {
+                                FileWriter writer = new FileWriter("formSentences.txt", true);
+                                writer.write(s+"\n");
+                                writer.close();
+                                System.out.println("Text appended to file successfully.");
+                                String temp = s.substring(0, 1).toUpperCase() + s.substring(1);
+                                result.add(temp);
+                                System.out.println(temp);
+                                formSentences.add(s);
+
+                            } catch (IOException e) {
+                                System.out.println("An error occurred while appending text to the file.");
+                                e.printStackTrace();
+                            }
+                        }
+                        if (yesOrNo == 1) { 
+                          JOptionPane.showMessageDialog(null, "Forma eklenmedi yardimlariniz icin tesekkurler");
+                          
+                          try {
+                                FileWriter writer = new FileWriter("invalidSentences.txt", true);
+                                writer.write(s+"\n");
+                                writer.close();
+                                System.out.println("Text appended to file successfully.");
+                                set.add(s);
+
+                            } catch (IOException e) {
+                                System.out.println("An error occurred while appending text to the file.");
+                                e.printStackTrace();
+                            }
+                          
+                        }
+                        if (yesOrNo == 2) { 
+                          JOptionPane.showMessageDialog(null, "Forma eklenmedi.");
+                        }
+                    }
+                    
                 }
                 
             }
