@@ -192,7 +192,7 @@ public class mainScreen extends javax.swing.JFrame {
                     }else if(s.endsWith("(")){
                         fixText += s.substring(0,s.length()-2);
                         isFixText = false;
-                        radioOrDropText = "<p>"+ fixText+"</p>\n";
+                        radioOrDropText = "        <p>"+ fixText+"</p>\n        <div class=\"checkAndRadio\">\n";
                         radioFlag = true;
                         System.out.println(fixText);
                         fixText = "";
@@ -200,7 +200,7 @@ public class mainScreen extends javax.swing.JFrame {
                     else if(s.endsWith("[")){
                         fixText += s.substring(0,s.length()-2);
                         isFixText = false;
-                        radioOrDropText = "<p>"+ fixText+"</p>\n";
+                        radioOrDropText = "        <p>"+ fixText+"</p>\n        <div class=\"checkAndRadio\">\n";
                         dropFlag = true;
                         System.out.println(fixText);
                         fixText = "";
@@ -222,12 +222,12 @@ public class mainScreen extends javax.swing.JFrame {
                                         
                 }
                 else if(radioFlag && !s.equals(")")){
-                    radioOrDropText += "<input type=\"radio\" id=\""+ idCounter +"\" name=\""+radioButtons.size()+"\" >\n" +
-                    "  <label for=\""+ idCounter++ +"\">"+s+"</label><br>";
+                    radioOrDropText += "            <input type=\"radio\" id=\""+ idCounter +"\" name=\""+radioButtons.size()+"\" >\n" +
+                    "               <label for=\""+ idCounter++ +"\">"+s+"</label>\n                <br>\n";
                 }
                 else if(dropFlag && !s.equals("]")){
-                    radioOrDropText += "<input type=\"checkbox\" id=\""+ idCounter +"\" name=\""+radioButtons.size()+"\" >\n" +
-                    "  <label for=\""+ idCounter++ +"\">"+s+"</label><br>";
+                    radioOrDropText += "            <input type=\"checkbox\" id=\""+ idCounter +"\" name=\""+radioButtons.size()+"\" >\n" +
+                    "               <label for=\""+ idCounter++ +"\">"+s+"</label>        \n                <br>\n";
                 }
                 else if(colors.containsKey(s)){
                     generalColor = colors.get(s);
@@ -257,12 +257,14 @@ public class mainScreen extends javax.swing.JFrame {
                     
                     result.add("Radio");
                     System.out.println("Radio");
+                    radioOrDropText+="        </div>\n";
                     radioFlag = false;
                     radioButtons.add(radioOrDropText);
                 }
                 else if( s.equals("]") ){
                     result.add("Drop");
                     System.out.println("Drop");
+                    radioOrDropText+="        </div>\n";
                     dropFlag = false;
                     radioButtons.add(radioOrDropText);
                 }
@@ -387,7 +389,7 @@ public class mainScreen extends javax.swing.JFrame {
             
             // Our things will be added to here
             if(imageInfo.length()!=0){
-                printStream.print("\n<img src=\"./images/"+imageInfo+".jpg"+"\" alt=\""+imageInfo+"\">\n");
+                printStream.print("\n        <img src=\"./images/"+imageInfo+".jpg"+"\" alt=\""+imageInfo+"\">\n");
             }
             
             for(String s : reducedText){
@@ -431,56 +433,61 @@ public class mainScreen extends javax.swing.JFrame {
                                 "<html>\n" +
                                 "<style>\n" +
                                 
-                                "img {"+
-                                "  display: block;\n"+
-                                "  margin-left: auto;\n"+
-                                "  margin-right: auto;\n"+
-                                "  width: 50%;\n"+
-                                "  border-radius: 50%;\n"+
-                                "}\n"+
+                                "   img {\n"+
+                                "       display: block;\n"+
+                                "       margin-left: auto;\n"+
+                                "       margin-right: auto;\n"+
+                                "       width: 50%;\n"+
+                                "       border-radius: 50%;\n"+
+                                "   }\n"+
                                 "\n" +
-                                "label {\n" +
-                                "      font-size: 1.2em;\n" +
-                                "      font-weight: bold;\n" +
-                                "      margin-right: 10px;\n" +
-                                "    }\n" +
+                                "   label {\n" +
+                                "       font-size: 1.2em;\n" +
+                                "       font-weight: bold;\n" +
+                                "       margin-right: 10px;\n" +
+                                "   }\n" +
                                 "\n" +
-                                "    input[type=\"text\"], input[type=\"email\"], input[type=\"password\"] {\n" +
-                                "      padding: 10px;\n" +
-                                "      font-size: 1.2em;\n" +
-                                "      margin-bottom: 20px;\n" +
-                                "      border-radius: 5px;\n" +
-                                "      border: 1px solid gray;\n" +
-                                "    }\n" +
+                                "   input[type=\"text\"], input[type=\"email\"], input[type=\"password\"] {\n" +
+                                "       padding: 10px;\n" +
+                                "       font-size: 1.2em;\n" +
+                                "       margin-bottom: 20px;\n" +
+                                "       border-radius: 5px;\n" +
+                                "       border: 1px solid gray;\n" +
+                                "   }\n" +
                                 "\n" +
-                                "    input[type=\"submit\"] {\n" +
-                                "      background-color: blue;\n" +
-                                "      color: white;\n" +
-                                "      padding: 10px 20px;\n" +
-                                "      border-radius: 5px;\n" +
-                                "      border: none;\n" +
-                                "      cursor: pointer;\n" +
-                                "    }"+
+                                "   input[type=\"submit\"] {\n" +
+                                "       background-color: blue;\n" +
+                                "       color: white;\n" +
+                                "       padding: 10px 20px;\n" +
+                                "       border-radius: 5px;\n" +
+                                "       border: none;\n" +
+                                "       cursor: pointer;\n" +
+                                "   }"+
                             
                                 "\n" +
-                                "input[type=submit]:hover {\n" +
-                                "  background-color: darkblue;\n" +
-                                "}\n" +
+                                "   input[type=submit]:hover {\n" +
+                                "       background-color: darkblue;\n" +
+                                "   }\n" +
                                 "\n" +
-                                "div {\n" +
-                                "  border-radius: 5px;\n" +
-                                "  display:flex;\n"+
-                                "  align-items: center;\n"+
-                                "  justify-content: center;\n"+
-                                "  background-color: "+generalColor+";\n" +
-                                "  padding: 20px;\n" +
-                                "}\n" +
-                                         "form {\n" +
-                                "  display:flex;\n"+
-                                "  align-items: center;\n"+
-                                "  justify-content: center;\n"+
-                                "  flex-direction: column;\n"+
-                                "}\n" +
+                                "   div {\n" +
+                                "       border-radius: 5px;\n" +
+                                "       display:flex;\n"+
+                                "       align-items: center;\n"+
+                                "       justify-content: center;\n"+
+                                "       background-color: "+generalColor+";\n" +
+                                "       padding: 20px;\n" +
+                                "   }\n" +
+                                "   form {\n" +
+                                "       display:flex;\n"+
+                                "       align-items: center;\n"+
+                                "       justify-content: center;\n"+
+                                "       flex-direction: column;\n"+
+                                "   }\n" +
+                                "   .checkAndRadio{\n" +
+                                "       display:flex;\n" +
+                                "       align-items: center;\n" +
+                                "       justify-content: center;\n" +
+                                "   }"+
                                 "</style>\n" +
                                 "<body>\n" +
                                 "\n" +
@@ -492,7 +499,7 @@ public class mainScreen extends javax.swing.JFrame {
             
             // Our things will be added to here
             if(imageInfo.length()!=0){
-                printStream2.print("\n<img src=\"./images/"+imageInfo+".jpg"+"\" alt=\""+imageInfo+"\">\n");
+                printStream2.print("\n        <img src=\"./images/"+imageInfo+".jpg"+"\" alt=\""+imageInfo+"\">\n");
             }
             
             for(String s : reducedText){
@@ -505,8 +512,8 @@ public class mainScreen extends javax.swing.JFrame {
                     //radioButtons.remove(0);
                 }
                 else{
-                    printStream2.print("\n<label for=\""+s+"\">"+s+"</label>\n" +
-                                  "<input type=\"text\" id=\""+s+"\" name=\""+s+"\" placeholder=\"" +s+"\"> \n<br/>");
+                    printStream2.print("\n        <label for=\""+s+"\">"+s+"</label>\n" +
+                                  "        <input type=\"text\" id=\""+s+"\" name=\""+s+"\" placeholder=\"" +s+"\"> \n        <br/>");
                 }
            }
             
@@ -514,8 +521,8 @@ public class mainScreen extends javax.swing.JFrame {
             
             
             
-            printStream2.print("<input type=\"submit\" value=\"Gonder\">\n" +
-                                "  </form>\n" +
+            printStream2.print("        <input type=\"submit\" value=\"Gonder\">\n" +
+                                "   </form>\n" +
                                 "</div>\n" +
                                 "\n" +
                                 "</body>\n" +

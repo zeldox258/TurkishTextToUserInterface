@@ -34,7 +34,7 @@ input[type=submit]:hover {
 
 div {
   border-radius: 5px;
-  background-color: chartreuse;
+  background-color: aqua;
   padding: 20px;
 }
 </style>
@@ -43,17 +43,35 @@ div {
 
 <div>
   <form action="/action_page.php">
-<img src="./images/Araba.jpg" alt="Araba">
-<p>Hangi Kurtlar vadisi karakterisin</p>
-<input type="checkbox" id="0" name="0" >
-  <label for="0">testere</label><br><input type="checkbox" id="1" name="0" >
-  <label for="1">polat</label><br><input type="checkbox" id="2" name="0" >
-  <label for="2">elif</label><br><input type="checkbox" id="3" name="0" >
-  <label for="3">cakir</label><br><p>En Buyuk takim kim</p>
-<input type="radio" id="4" name="1" >
-  <label for="4">Fenerbahce</label><br><input type="radio" id="5" name="1" >
-  <label for="5">Fenerbahce</label><br><input type="radio" id="6" name="1" >
-  <label for="6">Fenerbahce</label><br>
+        <img src="./images/Araba.jpg" alt="Araba">
+        <p>Hangi Kurtlar vadisi karakterisin</p>
+        <div class="checkAndRadio">
+            <input type="checkbox" id="0" name="0" >
+               <label for="0">testere</label>        
+                <br>
+            <input type="checkbox" id="1" name="0" >
+               <label for="1">polat</label>        
+                <br>
+            <input type="checkbox" id="2" name="0" >
+               <label for="2">elif</label>        
+                <br>
+            <input type="checkbox" id="3" name="0" >
+               <label for="3">cakir</label>        
+                <br>
+        </div>
+        <p>En Buyuk takim kim</p>
+        <div class="checkAndRadio">
+            <input type="radio" id="4" name="1" >
+               <label for="4">Fenerbahce</label>
+                <br>
+            <input type="radio" id="5" name="1" >
+               <label for="5">Fenerbahce</label>
+                <br>
+            <input type="radio" id="6" name="1" >
+               <label for="6">Fenerbahce</label>
+                <br>
+        </div>
+
 <label for="Isim">Isim</label>
 <input type="text" id="Isim" name="Isim" placeholder="Isim">
 <label for="Yas">Yas</label>

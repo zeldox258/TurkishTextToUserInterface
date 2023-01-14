@@ -1,92 +1,115 @@
 <!DOCTYPE html>
 <html>
 <style>
-img {  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  border-radius: 50%;
-}
+   img {
+       display: block;
+       margin-left: auto;
+       margin-right: auto;
+       width: 50%;
+       border-radius: 50%;
+   }
 
-label {
-      font-size: 1.2em;
-      font-weight: bold;
-      margin-right: 10px;
-    }
+   label {
+       font-size: 1.2em;
+       font-weight: bold;
+       margin-right: 10px;
+   }
 
-    input[type="text"], input[type="email"], input[type="password"] {
-      padding: 10px;
-      font-size: 1.2em;
-      margin-bottom: 20px;
-      border-radius: 5px;
-      border: 1px solid gray;
-    }
+   input[type="text"], input[type="email"], input[type="password"] {
+       padding: 10px;
+       font-size: 1.2em;
+       margin-bottom: 20px;
+       border-radius: 5px;
+       border: 1px solid gray;
+   }
 
-    input[type="submit"] {
-      background-color: blue;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      border: none;
-      cursor: pointer;
-    }
-input[type=submit]:hover {
-  background-color: darkblue;
-}
+   input[type="submit"] {
+       background-color: blue;
+       color: white;
+       padding: 10px 20px;
+       border-radius: 5px;
+       border: none;
+       cursor: pointer;
+   }
+   input[type=submit]:hover {
+       background-color: darkblue;
+   }
 
-div {
-  border-radius: 5px;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  background-color: chartreuse;
-  padding: 20px;
-}
-form {
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-</style>
+   div {
+       border-radius: 5px;
+       display:flex;
+       align-items: center;
+       justify-content: center;
+       background-color: aqua;
+       padding: 20px;
+   }
+   form {
+       display:flex;
+       align-items: center;
+       justify-content: center;
+       flex-direction: column;
+   }
+   .checkAndRadio{
+       display:flex;
+       align-items: center;
+       justify-content: center;
+   }</style>
 <body>
 
 
 <div>
   <form action="/action_page.php">
-<img src="./images/Araba.jpg" alt="Araba">
-<p>Hangi Kurtlar vadisi karakterisin</p>
-<input type="checkbox" id="0" name="0" >
-  <label for="0">testere</label><br><input type="checkbox" id="1" name="0" >
-  <label for="1">polat</label><br><input type="checkbox" id="2" name="0" >
-  <label for="2">elif</label><br><input type="checkbox" id="3" name="0" >
-  <label for="3">cakir</label><br><p>En Buyuk takim kim</p>
-<input type="radio" id="4" name="1" >
-  <label for="4">Fenerbahce</label><br><input type="radio" id="5" name="1" >
-  <label for="5">Fenerbahce</label><br><input type="radio" id="6" name="1" >
-  <label for="6">Fenerbahce</label><br>
-<label for="Isim">Isim</label>
-<input type="text" id="Isim" name="Isim" placeholder="Isim"> 
-<br/>
-<label for="Yas">Yas</label>
-<input type="text" id="Yas" name="Yas" placeholder="Yas"> 
-<br/>
-<label for="Sehir">Sehir</label>
-<input type="text" id="Sehir" name="Sehir" placeholder="Sehir"> 
-<br/>
-<label for="Plaka">Plaka</label>
-<input type="text" id="Plaka" name="Plaka" placeholder="Plaka"> 
-<br/>
-<label for="DogumTarihi">DogumTarihi</label>
-<input type="text" id="DogumTarihi" name="DogumTarihi" placeholder="DogumTarihi"> 
-<br/>
-<label for="DogumYeri">DogumYeri</label>
-<input type="text" id="DogumYeri" name="DogumYeri" placeholder="DogumYeri"> 
-<br/>
-<label for="EnYakinArkadas">EnYakinArkadas</label>
-<input type="text" id="EnYakinArkadas" name="EnYakinArkadas" placeholder="EnYakinArkadas"> 
-<br/><input type="submit" value="Gonder">
-  </form>
+        <img src="./images/Araba.jpg" alt="Araba">
+        <p>Hangi Kurtlar vadisi karakterisin</p>
+        <div class="checkAndRadio">
+            <input type="checkbox" id="0" name="0" >
+               <label for="0">testere</label>        
+                <br>
+            <input type="checkbox" id="1" name="0" >
+               <label for="1">polat</label>        
+                <br>
+            <input type="checkbox" id="2" name="0" >
+               <label for="2">elif</label>        
+                <br>
+            <input type="checkbox" id="3" name="0" >
+               <label for="3">cakir</label>        
+                <br>
+        </div>
+        <p>En Buyuk takim kim</p>
+        <div class="checkAndRadio">
+            <input type="radio" id="4" name="1" >
+               <label for="4">Fenerbahce</label>
+                <br>
+            <input type="radio" id="5" name="1" >
+               <label for="5">Fenerbahce</label>
+                <br>
+            <input type="radio" id="6" name="1" >
+               <label for="6">Fenerbahce</label>
+                <br>
+        </div>
+
+        <label for="Isim">Isim</label>
+        <input type="text" id="Isim" name="Isim" placeholder="Isim"> 
+        <br/>
+        <label for="Yas">Yas</label>
+        <input type="text" id="Yas" name="Yas" placeholder="Yas"> 
+        <br/>
+        <label for="Sehir">Sehir</label>
+        <input type="text" id="Sehir" name="Sehir" placeholder="Sehir"> 
+        <br/>
+        <label for="Plaka">Plaka</label>
+        <input type="text" id="Plaka" name="Plaka" placeholder="Plaka"> 
+        <br/>
+        <label for="DogumTarihi">DogumTarihi</label>
+        <input type="text" id="DogumTarihi" name="DogumTarihi" placeholder="DogumTarihi"> 
+        <br/>
+        <label for="DogumYeri">DogumYeri</label>
+        <input type="text" id="DogumYeri" name="DogumYeri" placeholder="DogumYeri"> 
+        <br/>
+        <label for="EnYakinArkadas">EnYakinArkadas</label>
+        <input type="text" id="EnYakinArkadas" name="EnYakinArkadas" placeholder="EnYakinArkadas"> 
+        <br/>        <input type="submit" value="Gonder">
+   </form>
 </div>
 
 </body>
