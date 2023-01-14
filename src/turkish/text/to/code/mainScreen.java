@@ -20,36 +20,16 @@ import static java.util.Map.entry;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths; 
 
 /**
  *
  * @author omera
  */
 public class mainScreen extends javax.swing.JFrame {
-    Set<String> set = new HashSet<>(Arrays.asList("ordan","bilgilerini","sorusu", "bir", "form", "bana", "olan","ve","bilgileri","guzel","arka","plan","ayrica","da","olsun","icerisinde","alan","arkaplani","renkli","arkaplan",
-    "boyle" , "bu", "sekilde",
-    "hatta",
-    "simdi" , "su","anda",
-    "ancak" , "lakin",
-    "dolayi" , "sebebiyle",
-    "gore" , "bakimindan",
-    "herhangi" , "her" ,"ne",
-    "yüzden" ,"nedenle",
-    "o" ,"zaman" , "zaman",
-    "oldugu" ,"haliyle",
-    "ilaveten" , "ek","olarak",
-    "genellikle" , "cogunlukla",
-    "once" , "ilkin",
-    "nasil" , "nasil","oluyor",
-    "nerede" , "hangi","yerde",
-    "nicin" , "neden",
-    "once" , "evvel",
-    "sonra" , "daha",
-    "sadece" , "sade",
-    "sanki" , " sanki",
-    "simdi" , "su","an",
-    "sonunda" , "sonunda",
-    "ancak" , "bununla","beraber","onunla","buna","benzer","bilgiler"));
+    Set<String> set = new HashSet<>();
     
     
     
@@ -115,6 +95,15 @@ public class mainScreen extends javax.swing.JFrame {
      */
     public mainScreen() {
         initComponents();
+        try {
+            var lines = Files.readAllLines(Paths.get("invalidSentences.txt"));
+            for(String line:lines) {
+                //System.out.println(line);
+                set.add(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
