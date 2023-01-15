@@ -331,6 +331,7 @@ public class mainScreen extends javax.swing.JFrame {
         String[] words = textAreaOfRequest.getText().split(" ");
         File yourFile = new File("result.html");
         File yourFile2 = new File("result1.html");
+        File yourFile3 = new File("result2.html");
         ArrayList<String> reducedText = reducer(words);
         int radioCounter = 0;
         
@@ -536,7 +537,153 @@ public class mainScreen extends javax.swing.JFrame {
             
             
             
+            //Result3
+            radioCounter = 0;
+            yourFile3.createNewFile(); // if file already exists will do nothing 
+            FileOutputStream oFile3 = new FileOutputStream(yourFile3, false);
+            PrintStream printStream3 = new PrintStream(oFile3);
+            printStream3.print("<!DOCTYPE html>\n" +
+                                "<html>\n" +
+                                "<style>\n" +
+                                "   input {\n" +
+                                "       caret-color: red;\n" +
+                                "   }\n" +
+                                "\n" +
+                                "   body {\n" +
+                                "       margin: 0;\n" +
+                                "       width: 100vw;\n" +
+                                "       height: 100%;\n" +
+                                "       background: #ecf0f3;\n" +
+                                "       display: flex;\n" +
+                                "       align-items: center;\n" +
+                                "       text-align: center;\n" +
+                                "       justify-content: center;\n" +
+                                "       place-items: center;\n" +
+                                "       overflow: auto;\n" +
+                                "       font-family: poppins;\n" +
+                                "   }\n" +
+                                "\n" +
+                                    "   img {\n"+
+                                "       display: block;\n"+
+                                "       margin-left: auto;\n"+
+                                "       margin-right: auto;\n"+
+                                "       width: 50%;\n"+
+                                "       border-radius: 50%;\n" +
+                                "       box-sizing: border-box;\n" +
+                                "       box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;\n" +
+                                "   }\n"+
+                                "   .checkAndRadio{\n" +
+                                "       display:flex;\n" +
+                                "       align-items: center;\n" +
+                                "       justify-content: center;\n" +
+                                "       box-sizing: none;\n" +
+                                "   }"+
+                                "   .container {\n" +
+                                "       position: relative;\n" +
+                                "       width: 500px;\n" +
+                                "       height: 100%;\n" +
+                                "       border-radius: 20px;\n" +
+                                "       padding: 40px;\n" +
+                                "       box-sizing: border-box;\n" +
+                                "       background: "+generalColor+";\n" +
+                                "       box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;\n" +
+                                "   }\n" +
+                                "\n" +
+                                "\n" +
+                                "   .inputs {\n" +
+                                "       text-align: left;\n" +
+                                "       margin-top: 30px;\n" +
+                                "   }\n" +
+                                "\n" +
+                                "   label, input, button {\n" +
+                                "       display: block;\n" +
+                                "       width: 100%;\n" +
+                                "       padding: 0;\n" +
+                                "       border: none;\n" +
+                                "       outline: none;\n" +
+                                "       box-sizing: border-box;\n" +
+                                "   }\n" +
+                                "\n" +
+                                "   label {\n" +
+                                "       margin-bottom: 4px;\n" +
+                                "   }\n" +
+                                "\n" +
+                                "   label:nth-of-type(2) {\n" +
+                                "       margin-top: 12px;\n" +
+                                "   }\n" +
+                                "\n" +
+                                "   input::placeholder {\n" +
+                                "       color: gray;\n" +
+                                "   }\n" +
+                                "\n" +
+                                "   input {\n" +
+                                "       background: #ecf0f3;\n" +
+                                "       padding: 10px;\n" +
+                                "       padding-left: 20px;\n" +
+                                "       height: 50px;\n" +
+                                "       font-size: 14px;\n" +
+                                "       border-radius: 50px;\n" +
+                                "       box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;\n" +
+                                "   }\n" +
+                                "\n" +
+                                "   button {\n" +
+                                "       color: white;\n" +
+                                "       margin-top: 20px;\n" +
+                                "       background: #1DA1F2;\n" +
+                                "       height: 40px;\n" +
+                                "       border-radius: 20px;\n" +
+                                "       cursor: pointer;\n" +
+                                "       font-weight: 900;\n" +
+                                "       box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;\n" +
+                                "       transition: 0.5s;\n" +
+                                "   }\n" +
+                                "\n" +
+                                "   button:hover {\n" +
+                                "       box-shadow: none;\n" +
+                                "   }"+
+                               
+                                "</style>\n" +
+                                "<body>\n" +
+                                "\n" +
+                                "\n" +
+                                "<div class=\"container\">\n" +
+                                "  <div class=\"inputs\">");
             
+            
+            
+            // Our things will be added to here
+            if(imageInfo.length()!=0){
+                printStream3.print("\n        <img src=\"./images/"+imageInfo+".jpg"+"\" alt=\""+imageInfo+"\">\n");
+            }
+            
+            for(String s : reducedText){
+                if(s.equals("Radio")){
+                    printStream3.print(radioButtons.get(radioCounter++));
+                    //radioButtons.remove(0);
+                }
+                else if(s.equals("Drop")){
+                    printStream3.print(radioButtons.get(radioCounter++));
+                    //radioButtons.remove(0);
+                }
+                else{
+                    printStream3.print("\n        <label for=\""+s+"\">"+s+"</label>\n" +
+                                  "        <input type=\"text\" id=\""+s+"\" name=\""+s+"\" placeholder=\"" +s+"\"> \n        <br/>");
+                }
+           }
+            
+            
+            
+            
+            
+            printStream3.print("        <button type=\"submit\">Gonder</button>\n" +
+                                "   </div>\n" +
+                                "</div>\n" +
+                                "\n" +
+                                "</body>\n" +
+                                "</html>");
+
+
+            printStream3.close();
             
             
             

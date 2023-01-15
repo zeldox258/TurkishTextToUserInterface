@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<style>
+   input {
+       caret-color: red;
+   }
+
+   body {
+       margin: 0;
+       width: 100vw;
+       height: 100%;
+       background: #ecf0f3;
+       display: flex;
+       align-items: center;
+       text-align: center;
+       justify-content: center;
+       place-items: center;
+       overflow: auto;
+       font-family: poppins;
+   }
+
+   img {
+       display: block;
+       margin-left: auto;
+       margin-right: auto;
+       width: 50%;
+       border-radius: 50%;
+       box-sizing: border-box;
+       box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
+   }
+   .checkAndRadio{
+       display:flex;
+       align-items: center;
+       justify-content: center;
+       box-sizing: none;
+   }   .container {
+       position: relative;
+       width: 500px;
+       height: 100%;
+       border-radius: 20px;
+       padding: 40px;
+       box-sizing: border-box;
+       background: yellow;
+       box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+   }
+
+
+   .inputs {
+       text-align: left;
+       margin-top: 30px;
+   }
+
+   label, input, button {
+       display: block;
+       width: 100%;
+       padding: 0;
+       border: none;
+       outline: none;
+       box-sizing: border-box;
+   }
+
+   label {
+       margin-bottom: 4px;
+   }
+
+   label:nth-of-type(2) {
+       margin-top: 12px;
+   }
+
+   input::placeholder {
+       color: gray;
+   }
+
+   input {
+       background: #ecf0f3;
+       padding: 10px;
+       padding-left: 20px;
+       height: 50px;
+       font-size: 14px;
+       border-radius: 50px;
+       box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+   }
+
+   button {
+       color: white;
+       margin-top: 20px;
+       background: #1DA1F2;
+       height: 40px;
+       border-radius: 20px;
+       cursor: pointer;
+       font-weight: 900;
+       box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+       transition: 0.5s;
+   }
+
+   button:hover {
+       box-shadow: none;
+   }</style>
+<body>
+
+
+<div class="container">
+  <div class="inputs">
+        <label for="Isim">Isim</label>
+        <input type="text" id="Isim" name="Isim" placeholder="Isim"> 
+        <br/>
+        <label for="Yas">Yas</label>
+        <input type="text" id="Yas" name="Yas" placeholder="Yas"> 
+        <br/>
+        <label for="Soyism">Soyism</label>
+        <input type="text" id="Soyism" name="Soyism" placeholder="Soyism"> 
+        <br/>
+        <label for="Telefon">Telefon</label>
+        <input type="text" id="Telefon" name="Telefon" placeholder="Telefon"> 
+        <br/>        <button type="submit">Gonder</button>
+   </div>
+</div>
+
+</body>
+</html>
