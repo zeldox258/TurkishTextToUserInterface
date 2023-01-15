@@ -40,7 +40,16 @@
        display:flex;
        align-items: center;
        justify-content: center;
+       width: 100%;
+       padding: 20px;
+   }
+   .formdiv {
+       border-radius: 5px;
+       display:flex;
+       align-items: center;
+       justify-content: center;
        background-color: yellow;
+       width: 60%;
        padding: 20px;
    }
    form {
@@ -58,6 +67,7 @@
 
 
 <div>
+<div class= "formdiv">
   <form action="/action_page.php">
         <label for="Isim">Isim</label>
         <input type="text" id="Isim" name="Isim" placeholder="Isim"> 
@@ -72,6 +82,7 @@
         <input type="text" id="Telefon" name="Telefon" placeholder="Telefon"> 
         <br/>        <input type="submit" value="Gonder">
    </form>
+</div>
 </div>
 
 </body>

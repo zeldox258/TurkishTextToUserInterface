@@ -475,11 +475,22 @@ public class mainScreen extends javax.swing.JFrame {
                                 "       display:flex;\n"+
                                 "       align-items: center;\n"+
                                 "       justify-content: center;\n"+
+                                
+                                "       width: 100%;\n"+
+                                "       padding: 20px;\n" +
+                                "   }\n" +
+                                "   .formdiv {\n" +
+                                "       border-radius: 5px;\n" +
+                                "       display:flex;\n"+
+                                "       align-items: center;\n"+
+                                "       justify-content: center;\n"+
                                 "       background-color: "+generalColor+";\n" +
+                                "       width: 60%;\n"+
                                 "       padding: 20px;\n" +
                                 "   }\n" +
                                 "   form {\n" +
                                 "       display:flex;\n"+
+
                                 "       align-items: center;\n"+
                                 "       justify-content: center;\n"+
                                 "       flex-direction: column;\n"+
@@ -494,6 +505,7 @@ public class mainScreen extends javax.swing.JFrame {
                                 "\n" +
                                 "\n" +
                                 "<div>\n" +
+                                "<div class= \"formdiv\">\n" +
                                 "  <form action=\"/action_page.php\">");
             
             
@@ -524,6 +536,7 @@ public class mainScreen extends javax.swing.JFrame {
             
             printStream2.print("        <input type=\"submit\" value=\"Gonder\">\n" +
                                 "   </form>\n" +
+                                "</div>\n" +
                                 "</div>\n" +
                                 "\n" +
                                 "</body>\n" +
