@@ -225,3 +225,6 @@ evDepozito
 evDepozitoOdemeTarihi
 evDepozitoOdemeSeklibagcikSayisi
 soyism
+ayakkabiNo
+kardesAdi
+ayakkabiMarkasi

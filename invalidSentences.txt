@@ -80,3 +80,6 @@ acil
 acil
 lazim
 ama
+blue
+yellow
+notDefteri

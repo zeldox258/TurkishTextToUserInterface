@@ -221,7 +221,7 @@ public class mainScreen extends javax.swing.JFrame {
                     }
                                         
                 }
-                else if(radioFlag && !s.equals(")")){
+                else if(radioFlag && !s.equals(")")){ 
                     radioOrDropText += "            <input type=\"radio\" id=\""+ idCounter +"\" name=\""+radioButtons.size()+"\" >\n" +
                     "               <label for=\""+ idCounter++ +"\">"+s+"</label>\n                <br>\n";
                 }
