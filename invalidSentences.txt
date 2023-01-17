@@ -83,3 +83,4 @@ ama
 blue
 yellow
 notDefteri
+plani

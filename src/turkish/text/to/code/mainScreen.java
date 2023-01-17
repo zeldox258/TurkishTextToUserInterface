@@ -33,7 +33,7 @@ import java.io.FileWriter;
 public class mainScreen extends javax.swing.JFrame {
     Set<String> set = new HashSet<>();
     Set<String> formSentences = new HashSet<>();
-
+    int totalId = 0;
     
     
     
@@ -334,6 +334,8 @@ public class mainScreen extends javax.swing.JFrame {
         File yourFile3 = new File("result2.html");
         ArrayList<String> reducedText = reducer(words);
         int radioCounter = 0;
+        int idStart = idCounter;
+        int tempIdStart = idCounter;
         
         try { 
             yourFile.createNewFile(); // if file already exists will do nothing 
@@ -384,7 +386,7 @@ public class mainScreen extends javax.swing.JFrame {
                                 "\n" +
                                 "\n" +
                                 "<div>\n" +
-                                "  <form action=\"/action_page.php\">");
+                                "  <form >");
             
             
             
@@ -404,7 +406,7 @@ public class mainScreen extends javax.swing.JFrame {
                 }
                 else{
                     printStream.print("\n<label for=\""+s+"\">"+s+"</label>\n" +
-                                  "<input type=\"text\" id=\""+s+"\" name=\""+s+"\" placeholder=\"" +s+"\">");
+                                  "<input type=\"text\" id=\""+idCounter++ +"\" name=\""+s+"\" placeholder=\"" +s+"\">");
                 }
            }
             
@@ -412,10 +414,12 @@ public class mainScreen extends javax.swing.JFrame {
             
             
             
-            printStream.print("<input type=\"submit\" value=\"Gonder\">\n" +
+            printStream.print("<input id=\"submit\" type=\"submit\" value=\"Gonder\">\n" +
                                 "  </form>\n" +
                                 "</div>\n" +
                                 "\n" +
+                                "<script src=\"https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js\"></script>"+
+                                "<script src=\"./main.js\"></script>"+
                                 "</body>\n" +
                                 "</html>");
 
@@ -506,7 +510,7 @@ public class mainScreen extends javax.swing.JFrame {
                                 "\n" +
                                 "<div>\n" +
                                 "<div class= \"formdiv\">\n" +
-                                "  <form action=\"/action_page.php\">");
+                                "  <form >");
             
             
             
@@ -526,7 +530,7 @@ public class mainScreen extends javax.swing.JFrame {
                 }
                 else{
                     printStream2.print("\n        <label for=\""+s+"\">"+s+"</label>\n" +
-                                  "        <input type=\"text\" id=\""+s+"\" name=\""+s+"\" placeholder=\"" +s+"\"> \n        <br/>");
+                                  "        <input type=\"text\" id=\""+tempIdStart++ +"\" name=\""+s+"\" placeholder=\"" +s+"\"> \n        <br/>");
                 }
            }
             
@@ -534,11 +538,13 @@ public class mainScreen extends javax.swing.JFrame {
             
             
             
-            printStream2.print("        <input type=\"submit\" value=\"Gonder\">\n" +
+            printStream2.print("        <input id=\"submit\" type=\"submit\" value=\"Gonder\">\n" +
                                 "   </form>\n" +
                                 "</div>\n" +
                                 "</div>\n" +
                                 "\n" +
+                                "<script src=\"https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js\"></script>"+
+                                "<script src=\"./main.js\"></script>"+
                                 "</body>\n" +
                                 "</html>");
 
@@ -549,7 +555,7 @@ public class mainScreen extends javax.swing.JFrame {
             
             
             
-            
+            tempIdStart = idStart;
             //Result3
             radioCounter = 0;
             yourFile3.createNewFile(); // if file already exists will do nothing 
@@ -680,7 +686,7 @@ public class mainScreen extends javax.swing.JFrame {
                 }
                 else{
                     printStream3.print("\n        <label for=\""+s+"\">"+s+"</label>\n" +
-                                  "        <input type=\"text\" id=\""+s+"\" name=\""+s+"\" placeholder=\"" +s+"\"> \n        <br/>");
+                                  "        <input type=\"text\" id=\""+tempIdStart++ +"\" name=\""+s+"\" placeholder=\"" +s+"\"> \n        <br/>");
                 }
            }
             
@@ -688,11 +694,13 @@ public class mainScreen extends javax.swing.JFrame {
             
             
             
-            printStream3.print("        <button type=\"submit\">Gonder</button>\n" +
+            printStream3.print("        <button id=\"submit\" type=\"submit\">Gonder</button>\n" +
                                 "   </div>\n" +
                                 "</div>\n" +
                                 "\n" +
                                 "</body>\n" +
+                                "<script src=\"https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js\"></script>"+
+                                "<script src=\"./main.js\"></script>"+
                                 "</html>");
 
 
@@ -702,7 +710,13 @@ public class mainScreen extends javax.swing.JFrame {
             
             
             
-            
+            try {
+                FileWriter writer = new FileWriter("totalNumber.txt");
+                writer.write(Integer.toString(idCounter));
+                writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             
             
             
