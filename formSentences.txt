@@ -228,3 +228,4 @@ soyism
 ayakkabiNo
 kardesAdi
 ayakkabiMarkasi
+mataraHacmi
