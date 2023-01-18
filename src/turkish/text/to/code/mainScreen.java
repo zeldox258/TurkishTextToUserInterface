@@ -179,6 +179,8 @@ public class mainScreen extends javax.swing.JFrame {
         boolean isFixText = false;
         for(String s : arr){
             s.replaceAll(" ", "");
+            s.replaceAll("\n", "");
+
             if(s.startsWith("\n")){
                 s = s.substring(1);
             }
