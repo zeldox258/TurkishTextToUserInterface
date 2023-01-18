@@ -178,9 +178,12 @@ public class mainScreen extends javax.swing.JFrame {
         String fixText = "";
         boolean isFixText = false;
         for(String s : arr){
+            s.replaceAll(" ", "");
             if(s.startsWith("\n")){
                 s = s.substring(1);
             }
+            if(s.length() == 0) continue;
+            
             if(!set.contains(s)){
                 if(isFixText){
                     if(s.endsWith("\"")){
@@ -718,6 +721,9 @@ public class mainScreen extends javax.swing.JFrame {
                 e.printStackTrace();
             }
             
+            
+            System.out.println("Total "+idCounter+" input and label created");
+            idCounter = 0;
             
             
             
