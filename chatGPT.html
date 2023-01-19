@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Form</title>
+  <style>
+    /* Add background color for body element */
+    body {
+      background-color: #FFFF00;
+    }
+    /* Add styles for image */
+    img{
+      width:100px;
+      height:100px;
+    }
+    form {
+      width: 300px;
+      margin: 0 auto;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 10px;
+    }
+    input[type="text"], input[type="number"], input[type="email"] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+    }
+    /* Add styles for checkbox group */
+    .favorite-country {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .favorite-country label {
+      flex: 1;
+      margin-right: 10px;
+    }
+    /* Add styles for submit button */
+    input[type="submit"] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+<img src="https://images.unsplash.com/photo-1586458085143-b0c7d8b874e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80" alt="Car Image">
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+    <label for="surname">Surname:</label>
+    <input type="text" id="surname" name="surname"><br><br>
+    <label for="student-number">Student Number:</label>
+    <input type="number" id="student-number" name="student-number"><br><br>
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age"><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+    <label>Favorite country:</label>
+    <div class="favorite-country">
+      <label>
+        <input type="checkbox" name="favorite-country" value="italy"> Italy
+      </label>
+      <label>
+        <input type="checkbox" name="favorite-country" value="turkey"> Turkey
+      </label>
+      <label>
+        <input type="checkbox" name="favorite-country" value="america"> America
+      </label>
+      <label>
+        <input type="checkbox" name="favorite-country" value="israel"> Israel
+      </label>
+    </div>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
+

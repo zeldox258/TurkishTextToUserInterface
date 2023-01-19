@@ -229,3 +229,4 @@ ayakkabiNo
 kardesAdi
 ayakkabiMarkasi
 mataraHacmi
+ogrenciNo
