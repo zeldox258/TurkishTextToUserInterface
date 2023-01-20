@@ -230,3 +230,6 @@ kardesAdi
 ayakkabiMarkasi
 mataraHacmi
 ogrenciNo
+ayakkaniNo
+cinsiyeti
+universite

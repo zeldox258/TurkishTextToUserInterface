@@ -723,7 +723,7 @@ public class mainScreen extends javax.swing.JFrame {
                 e.printStackTrace();
             }
             
-            
+             
             System.out.println("Total "+idCounter+" input and label created");
             idCounter = 0;
             
