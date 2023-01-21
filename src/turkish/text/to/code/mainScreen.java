@@ -119,6 +119,18 @@ public class mainScreen extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
+    
+    public static String putSpaceBeforeBigLetter(String s){
+        StringBuilder str = new StringBuilder();
+        
+        for(int i = 0;i<s.length();i++){
+            if(s.charAt(i)-'A' >=0 && s.charAt(i)-'Z'<=0)
+                str.append(" ");
+            str.append(s.charAt(i));
+        }
+        
+        return str.toString();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -275,7 +287,7 @@ public class mainScreen extends javax.swing.JFrame {
                 }
                 else{
                     if(formSentences.contains(s)){
-                        String temp = s.substring(0, 1).toUpperCase() + s.substring(1);
+                        String temp = putSpaceBeforeBigLetter(s.substring(0, 1).toUpperCase() + s.substring(1));
                         result.add(temp);
                         System.out.println(temp);
                     }
