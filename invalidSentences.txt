@@ -93,3 +93,7 @@ ver
 verir
 misin
 sonrasinda
+soyle
+icinde
+verebilir
+canim

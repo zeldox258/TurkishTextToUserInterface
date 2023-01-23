@@ -300,7 +300,7 @@ public class mainScreen extends javax.swing.JFrame {
                                 writer.write(s+"\n");
                                 writer.close();
                                 System.out.println("Text appended to file successfully.");
-                                String temp = s.substring(0, 1).toUpperCase() + s.substring(1);
+                                String temp = putSpaceBeforeBigLetter(s.substring(0, 1).toUpperCase() + s.substring(1));
                                 result.add(temp);
                                 System.out.println(temp);
                                 formSentences.add(s);
