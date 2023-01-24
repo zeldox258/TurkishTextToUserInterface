@@ -716,8 +716,8 @@ public class mainScreen extends javax.swing.JFrame {
                                 "</div>\n" +
                                 "\n" +
                                 "</body>\n" +
-                                "<script src=\"https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js\"></script>"+
-                                "<script src=\"./main.js\"></script>"+
+                                "<script src=\"https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js\"></script>\n"+
+                                "<script src=\"./main.js\"></script>\n"+
                                 "</html>"); 
 
 
